@@ -1,0 +1,4 @@
+[debug] "not up to date. inChanged = true, force = false
+[debug] Updating ProjectRef(uri("file:/home/skrbic/fp-projects/pure-fp-rest-api%20(copy)/project/"), "pure-fp-rest-api-copy--build")...
+[debug] Done updating ProjectRef(uri("file:/home/skrbic/fp-projects/pure-fp-rest-api%20(copy)/project/"), "pure-fp-rest-api-copy--build")
+[warn] There may be incompatibilities among your library dependencies; run 'evicted' to see detailed eviction warnings.
