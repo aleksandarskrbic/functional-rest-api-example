@@ -1,7 +1,5 @@
 package trip.http.routes
 
-import java.util.UUID
-
 import cats._
 import cats.data.Kleisli
 import cats.implicits._
@@ -12,7 +10,7 @@ import org.http4s.server.Router
 import org.http4s.syntax.kleisli.http4sKleisliResponseSyntaxOptionT
 import trip.algebras._
 import trip.domain.trip._
-import trip.http.json._
+import trip.http.JsonHttpCodec._
 
 final class TripRoutes[F[_]: Defer: JsonDecoder: Monad](
     trips: Trips[F]

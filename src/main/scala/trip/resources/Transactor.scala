@@ -1,9 +1,9 @@
 package trip.resources
 
-import cats.effect._
 import doobie._
+import cats.effect._
 import doobie.hikari._
-import trip.config.data._
+import trip.config._
 
 final class Transactor[F[_]](
     transactor: Resource[F, HikariTransactor[F]]

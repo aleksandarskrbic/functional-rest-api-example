@@ -2,14 +2,12 @@ package trip.algebras
 
 import doobie._
 import doobie.implicits._
-import doobie.util.ExecutionContexts
 import doobie.hikari.HikariTransactor
+import doobie.implicits.legacy.localdate._
 import cats._
-import cats.data._
 import cats.effect._
 import cats.implicits._
 import trip.domain.trip._
-import doobie.implicits.legacy.localdate._
 
 trait Trips[F[_]] {
   def create(trip: CreateTrip): F[Unit]

@@ -1,17 +1,16 @@
 package trip
 
-import cats.effect.{ ExitCode, IO, IOApp }
-import org.http4s.HttpApp
+import cats.effect._
 import org.http4s.server.blaze.BlazeServerBuilder
-import org.http4s.server.middleware.{ RequestLogger, ResponseLogger }
-import trip.algebras.{ LiveTrips, TripQueries, Trips }
-import trip.http.routes.TripRoutes
-import trip.resources.Transactor
+import trip.algebras._
+import trip.config._
+import trip.http.routes._
+import trip.resources._
 
 object Application extends IOApp {
 
   override def run(args: List[String]) =
-    config.load[IO].use { config =>
+    Config.load[IO].use { config =>
       val xa = Transactor.make[IO](config.pgConfig)
       for {
         trips <- LiveTrips.make[IO](xa)
